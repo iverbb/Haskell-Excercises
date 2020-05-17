@@ -1,9 +1,9 @@
-module DateFormat where
+module FormatDate where
 
 import Data.List 
 
-dateFormat :: Integral i => i -> String
-dateFormat n = 
+formatDate :: Integral i => i -> String
+formatDate n = 
   case (length times) of
     0 -> ""
     1 -> head times
