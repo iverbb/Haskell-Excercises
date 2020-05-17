@@ -5,7 +5,7 @@ import Data.List
 formatDuration :: Integral i => i -> String
 formatDuration n = 
   case (length times) of
-    0 -> ""
+    0 -> "now"
     1 -> head times
     _ -> (intercalate ", " (init times)) ++ " and " ++ (last times)
   where times = filter (/="") $ zipWith pluralize (mods n) names
