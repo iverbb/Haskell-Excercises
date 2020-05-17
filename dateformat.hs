@@ -3,8 +3,11 @@ module DateFormat where
 import Data.List 
 
 dateFormat :: Integral i => i -> String
-dateFormat n 
-  = (intercalate ", " (init times)) ++ " and " ++ (last times)
+dateFormat n = 
+  case (length times) of
+    0 -> ""
+    1 -> head times
+    _ -> (intercalate ", " (init times)) ++ " and " ++ (last times)
   where times = filter (/="") $ zipWith pluralize (mods n) names
         names = ["year", "day", "hour", "minute", "second"]
 
